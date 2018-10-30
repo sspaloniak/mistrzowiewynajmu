@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MistrzowieWynajmu.Model.Database;
 
 namespace MistrzowieWynajmu
 {
@@ -23,6 +25,9 @@ namespace MistrzowieWynajmu
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var dbConnectionString = @"Data Source=LAPTOP-ACER\SQLSERVER;Initial Catalog=MistrzowieDB;User ID=sa;Password=123EWQasd;";
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,7 +43,7 @@ namespace MistrzowieWynajmu
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler(" / Home/Error");
             }
 
             app.UseStaticFiles();
