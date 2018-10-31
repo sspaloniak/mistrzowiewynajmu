@@ -11,6 +11,6 @@ namespace MistrzowieWynajmu.Model.Interfaces
         Property GetProperty(int propertyId);
         int AddProperty(Property property, Address address, Owner onwer);
         int EditProperty(Property property);
-        void DeleteProperty(Property property, Address address, Owner onwer)
+        void DeleteProperty(Property property, Address address, Owner onwer);
     }
 }
