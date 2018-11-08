@@ -15,17 +15,19 @@ import { PropertiesComponent } from './components/properties/components/properti
 import { PropertiesService } from './components/properties/services/properties.service';
 import { PropertiesBackendService } from './services/properties-backend.service';
 import { HttpPropertiesBackendService } from './services/http-properties-backend.service';
+import { PropertyDetailsComponent } from './components/properties/components/property-details.component';
 
-@NgModule({
+@NgModule({                 // Dodawanie nowych komponentów
     declarations: [
         AppComponent,
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        PropertiesComponent
+        PropertiesComponent,
+        PropertyDetailsComponent 
     ],
-    imports: [
+    imports: [             // Œcie¿ki URL do komponentów
         CommonModule,
         HttpModule,
         FormsModule,
@@ -35,6 +37,9 @@ import { HttpPropertiesBackendService } from './services/http-properties-backend
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'properties', component: PropertiesComponent },
+            { path: 'properties/new-property', component: PropertyDetailsComponent },
+            { path: 'properties/property-details/:id', component: PropertyDetailsComponent },
+            { path: 'properties/property-update/:id', component: PropertyDetailsComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],

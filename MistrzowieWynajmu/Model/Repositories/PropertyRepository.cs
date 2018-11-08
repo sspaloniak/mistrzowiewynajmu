@@ -86,12 +86,9 @@ namespace MistrzowieWynajmu.Model.Repositories
             }
 
             _databaseContext.Properties.Remove(property);
-            _databaseContext.SaveChanges();
-
             _databaseContext.Addresses.Remove(address);
-            _databaseContext.SaveChanges();
-
             _databaseContext.Owners.Remove(owner);
+
             _databaseContext.SaveChanges();
         }
 
