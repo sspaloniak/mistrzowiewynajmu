@@ -1,17 +1,16 @@
-﻿import { Property } from '../models/Property';
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Property } from '../models/property';
 
 @Injectable()
 export abstract class PropertiesBackendService {
-    abstract addProperty(newProperty: Property): Observable<number>;
+	abstract addProperty(newProperty: Property): Observable<number>;
 
-    abstract getProperty(propertyId: number): Observable<Property>;
+	abstract getProperty(id: number): Observable<Property>;
 
-    abstract deleteProperty(propertyId: number): Observable<number>;
+	abstract getProperties(): Observable<Property[]>;
 
-    abstract getProperties(): Observable<Property[]>;
+	abstract updateProperty(updatedProperty: Property): Observable<number>;
 
-    abstract updateProperty(updatedProperty: Property): Observable<number>;
-
+	abstract deleteProperty(propertyId: number): Observable<number>;
 }

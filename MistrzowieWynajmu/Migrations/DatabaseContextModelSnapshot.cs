@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using MistrzowieWynajmu.Model;
-using MistrzowieWynajmu.Model.Database;
+using MistrzowieWynajmu.Models;
+using MistrzowieWynajmu.Models.Database;
 using System;
 
 namespace MistrzowieWynajmu.Migrations
